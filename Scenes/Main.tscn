@@ -1,0 +1,714 @@
+[gd_scene load_steps=67 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Suspect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/suspect_denim_face.png" type="Texture" id=3]
+[ext_resource path="res://sprites/item_poison.png" type="Texture" id=4]
+[ext_resource path="res://sprites/suspect_lilac_face.png" type="Texture" id=5]
+[ext_resource path="res://sprites/item_letteropener.png" type="Texture" id=6]
+[ext_resource path="res://sprites/suspect_gold_face.png" type="Texture" id=7]
+[ext_resource path="res://sprites/item_wrench.png" type="Texture" id=8]
+[ext_resource path="res://sprites/suspect_maroon_face.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Item.gd" type="Script" id=10]
+[ext_resource path="res://sprites/suspect_pink_face.png" type="Texture" id=11]
+[ext_resource path="res://sprites/item_pillow.png" type="Texture" id=12]
+[ext_resource path="res://sprites/suspect_green_face.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Room.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Maps/Map.tmx" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Detective.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scripts/Message.gd" type="Script" id=17]
+[ext_resource path="res://sprites/detective_face.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Interactable.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Text/message_candelabra.tres" type="Resource" id=22]
+[ext_resource path="res://sprites/item_painkillers.png" type="Texture" id=23]
+[ext_resource path="res://sprites/item_axe.png" type="Texture" id=24]
+[ext_resource path="res://sprites/object_car.png" type="Texture" id=25]
+[ext_resource path="res://sprites/suspect_denim_body.png" type="Texture" id=26]
+[ext_resource path="res://sprites/suspect_maroon_body.png" type="Texture" id=27]
+[ext_resource path="res://sprites/suspect_lilac_body.png" type="Texture" id=28]
+[ext_resource path="res://sprites/suspect_pink_body.png" type="Texture" id=29]
+[ext_resource path="res://sprites/suspect_green_body.png" type="Texture" id=30]
+[ext_resource path="res://sprites/suspect_gold_body.png" type="Texture" id=31]
+[ext_resource path="res://sprites/suspect_gray_face.png" type="Texture" id=32]
+[ext_resource path="res://sprites/suspect_gray_body.png" type="Texture" id=33]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 427.985, 225.691 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 17 )
+displayName = "You"
+text = "An imponent wooden gate. As much as I'd love to go out and treat myself to some liquor, I have a murderer to find."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A sports car beautiful enough to make me start spouting misogyny."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 31.3475, 43.1301 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A series of workbenches, their tops littered with tools and grime."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 104.318, 39.5601 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 17 )
+displayName = "You"
+text = "An old electrical cable. Its rubber is consumed and brittle. Too weak to have been used as a murder weapon."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A large cobweb. And by large I mean terrifying. For the love of all that is good, don't make me step in this.
+Murderers are less of an issue."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 199.511, 138.68 )
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A storage cupboard. Its inner shelves are lined with boxes of food. There are some cleaning supplies at the bottom."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A large cauldron to be used to prepare massive amounts of soup. Or potions, if you're a witch."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 17 )
+displayName = "You"
+text = "Ah... a stove. How long since I've had somebody to cook for me? I remember then, when I didn't have to drown my worries in booze.
+This is as much backstory as you'll get."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 168, 138.68 )
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 17 )
+displayName = "You"
+text = "Two bookcases loaded with leather covers and gilded names of people I've never heard of."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 72, 48 )
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A bookcase full of... wait a second. Hidden behind the books, I see it! A porno mag! Ah, nothing ever escapes my brilliant observation skills."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 17 )
+displayName = "You"
+text = "This rich mahogany desk is littered with important-looking documents."
+image = ExtResource( 18 )
+
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 40.0
+height = 80.0
+
+[sub_resource type="Resource" id=20]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A creaky old chest. Who knows what kind of things it could hide? Maybe even a murder weapon..."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 432, 104 )
+
+[sub_resource type="Resource" id=22]
+script = ExtResource( 17 )
+displayName = "You"
+text = "What a roaring fireplace! How lively! Unlike the victim."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 104, 232 )
+
+[sub_resource type="Resource" id=24]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A fluffy king sized bed I'd love to sink into. Especially with company, and without a murderer around."
+image = ExtResource( 18 )
+
+[sub_resource type="CircleShape2D" id=34]
+radius = 86.2355
+
+[sub_resource type="Resource" id=32]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A closet for clothes. Exquisite and extravagant outfits hang inside. They must be expensive."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 96, 136 )
+
+[sub_resource type="Resource" id=26]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A sink of smooth and cool ceramic. There are a mirror and a medicine cabinet over it."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=27]
+script = ExtResource( 17 )
+displayName = "You"
+text = "Last time I found a murder weapon in a toilet I was looking for the murderous psycopath named \"The Brown Menace\". Good times."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=28]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A fancy white bathtub standing on four curved legs and fed by a golden faucet. Just looking at it makes me sick. And envious."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=29]
+script = ExtResource( 17 )
+displayName = "You"
+text = "There is a pile of neatly folded clothes over the washing machine. The porthole hatch is open."
+image = ExtResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 472, 144 )
+
+[sub_resource type="Resource" id=31]
+script = ExtResource( 17 )
+displayName = "You"
+text = "A crumbling well. A frayed rope hangs by a large nail. Pulling it reveals a half-rotten bucket."
+image = ExtResource( 18 )
+
+[sub_resource type="Resource" id=33]
+script = ExtResource( 17 )
+displayName = "You"
+text = "This tree's bark has been chipped away with some kind of tool."
+image = ExtResource( 18 )
+
+[node name="Main" type="Node2D"]
+position = Vector2( 32, 32 )
+script = ExtResource( 1 )
+
+[node name="UI" parent="." instance=ExtResource( 19 )]
+
+[node name="Map" parent="." instance=ExtResource( 15 )]
+scale = Vector2( 4, 4 )
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( -544, 1120 )
+
+[node name="Door10" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( -672, 992 )
+
+[node name="Door2" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( 416, 1312 )
+
+[node name="Door3" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( 736, 992 )
+
+[node name="Door11" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( 672, 1120 )
+
+[node name="Door4" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( 416, 800 )
+
+[node name="Door5" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( -544, 800 )
+
+[node name="Door12" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( -736, 672 )
+
+[node name="Door6" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( -96, 928 )
+
+[node name="Door7" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( -32, 928 )
+
+[node name="Door8" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( 96, 608 )
+
+[node name="Door9" parent="Doors" instance=ExtResource( 20 )]
+position = Vector2( 160, 608 )
+
+[node name="Rooms" type="Node2D" parent="."]
+position = Vector2( -72, 1024 )
+
+[node name="Hall" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( 6.9538, 195.136 )
+roomName = "Main Hall"
+linkedRooms = [ NodePath("../Garage"), NodePath("../Kitchen"), NodePath("../Lounge") ]
+
+[node name="Shape" parent="Rooms/Hall" index="0"]
+visible = false
+position = Vector2( -2.93842, -9.44487 )
+shape = SubResource( 1 )
+
+[node name="Candelabra" parent="Rooms/Hall/Interactables" index="0" instance=ExtResource( 21 )]
+position = Vector2( -222.954, 220.864 )
+message = ExtResource( 22 )
+
+[node name="Candelabra2" parent="Rooms/Hall/Interactables" index="1" instance=ExtResource( 21 )]
+position = Vector2( 225.046, 220.864 )
+message = ExtResource( 22 )
+
+[node name="Candelabra3" parent="Rooms/Hall/Interactables" index="2" instance=ExtResource( 21 )]
+position = Vector2( 225.046, -227.136 )
+message = ExtResource( 22 )
+
+[node name="Candelabra4" parent="Rooms/Hall/Interactables" index="3" instance=ExtResource( 21 )]
+position = Vector2( -222.954, -227.136 )
+message = ExtResource( 22 )
+
+[node name="WoodenDoors" parent="Rooms/Hall/Interactables" index="4" instance=ExtResource( 21 )]
+position = Vector2( 1.0462, 284.864 )
+message = SubResource( 2 )
+
+[node name="SpawnPoints" type="Node2D" parent="Rooms/Hall"]
+
+[node name="Position2D" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( -318.954, 12.864 )
+
+[node name="Position2D9" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( -190.954, 52.864 )
+
+[node name="Position2D10" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( -334.954, 132.864 )
+
+[node name="Position2D2" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( -214.954, -75.136 )
+
+[node name="Position2D3" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( -326.954, -139.136 )
+
+[node name="Position2D4" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( 345.046, -139.136 )
+
+[node name="Position2D5" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( 177.046, -91.136 )
+
+[node name="Position2D6" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( 273.046, -19.136 )
+
+[node name="Position2D7" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( 177.046, 60.864 )
+
+[node name="Position2D8" type="Position2D" parent="Rooms/Hall/SpawnPoints" groups=[
+"suspectSpawns",
+]]
+position = Vector2( 313.046, 132.864 )
+
+[node name="Garage" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( 711.214, 291.286 )
+roomName = "Garage"
+linkedRooms = [ NodePath("../Hall"), NodePath("../Bedroom") ]
+
+[node name="Car" parent="Rooms/Garage/Interactables" index="0" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+message = SubResource( 3 )
+containerLine = "Inside the trunk you find:"
+
+[node name="Body" type="KinematicBody2D" parent="Rooms/Garage/Interactables/Car"]
+
+[node name="Sprite" type="Sprite" parent="Rooms/Garage/Interactables/Car/Body"]
+scale = Vector2( 6, 6 )
+texture = ExtResource( 25 )
+
+[node name="Collision" type="CollisionShape2D" parent="Rooms/Garage/Interactables/Car/Body"]
+shape = SubResource( 4 )
+
+[node name="Workbenches" parent="Rooms/Garage/Interactables" index="1" groups=[
+"wrenchSpawns",
+] instance=ExtResource( 21 )]
+position = Vector2( -94.9773, -130.469 )
+message = SubResource( 5 )
+containerLine = "Over the top you find:"
+
+[node name="Shape" parent="Rooms/Garage/Interactables/Workbenches" index="1"]
+shape = SubResource( 6 )
+
+[node name="Cable" parent="Rooms/Garage/Interactables" index="2" instance=ExtResource( 21 )]
+position = Vector2( 158.383, 118.787 )
+message = SubResource( 7 )
+
+[node name="Cobweb" parent="Rooms/Garage/Interactables" index="3" instance=ExtResource( 21 )]
+position = Vector2( -159.548, 122.281 )
+message = SubResource( 8 )
+
+[node name="VictimSpot" parent="Rooms/Garage" index="3"]
+position = Vector2( 38.4521, 105.269 )
+
+[node name="Kitchen" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( -727.511, 129.331 )
+roomName = "Kitchen"
+linkedRooms = [ NodePath("../Hall"), NodePath("../Study") ]
+
+[node name="Shape" parent="Rooms/Kitchen" index="0"]
+position = Vector2( -0.489014, 30.6689 )
+shape = SubResource( 9 )
+
+[node name="Cupboard" parent="Rooms/Kitchen/Interactables" index="0" groups=[
+"poisonSpawns",
+] instance=ExtResource( 21 )]
+position = Vector2( 191.511, 94.6687 )
+message = SubResource( 10 )
+
+[node name="Pot" parent="Rooms/Kitchen/Interactables" index="1" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+position = Vector2( -192.489, 30.6687 )
+message = SubResource( 11 )
+containerLine = "At its bottom you find"
+
+[node name="Stove" parent="Rooms/Kitchen/Interactables" index="2" instance=ExtResource( 21 )]
+position = Vector2( -64.4894, -97.3313 )
+message = SubResource( 12 )
+
+[node name="VictimSpot" parent="Rooms/Kitchen" index="3"]
+position = Vector2( -35.312, 91.0265 )
+
+[node name="Study" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( -704, -200 )
+roomName = "Study"
+linkedRooms = [ NodePath("../Lounge"), NodePath("../Kitchen") ]
+
+[node name="Shape" parent="Rooms/Study" index="0"]
+shape = SubResource( 13 )
+
+[node name="Bookcases" parent="Rooms/Study/Interactables" index="0" instance=ExtResource( 21 )]
+position = Vector2( 136, -88 )
+message = SubResource( 14 )
+
+[node name="Shape" parent="Rooms/Study/Interactables/Bookcases" index="1"]
+shape = SubResource( 15 )
+
+[node name="Bookcase2" parent="Rooms/Study/Interactables" index="1" instance=ExtResource( 21 )]
+position = Vector2( 169.027, 104.479 )
+message = SubResource( 17 )
+
+[node name="Desk" parent="Rooms/Study/Interactables" index="2" groups=[
+"daggerSpawns",
+] instance=ExtResource( 21 )]
+position = Vector2( -19.691, -0.47876 )
+message = SubResource( 18 )
+containerLine = "Among the documents you find:"
+
+[node name="Shape" parent="Rooms/Study/Interactables/Desk" index="1"]
+shape = SubResource( 19 )
+
+[node name="Chest" parent="Rooms/Study/Interactables" index="3" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+position = Vector2( -152, -88 )
+message = SubResource( 20 )
+containerLine = "It opens with a squeak. You find:"
+
+[node name="VictimSpot" parent="Rooms/Study" index="3"]
+position = Vector2( -148.96, 3.55358 )
+
+[node name="Lounge" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( 0, -256 )
+roomName = "Lounge"
+linkedRooms = [ NodePath("../Study"), NodePath("../Bedroom"), NodePath("../Yard") ]
+
+[node name="Shape" parent="Rooms/Lounge" index="0"]
+shape = SubResource( 21 )
+
+[node name="Interactables" parent="Rooms/Lounge" index="1"]
+position = Vector2( 8, 0 )
+
+[node name="Fireplace" parent="Rooms/Lounge/Interactables" index="0" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+position = Vector2( -224, -32 )
+message = SubResource( 22 )
+containerLine = "Between the coals you find:"
+
+[node name="VictimSpot" parent="Rooms/Lounge" index="3"]
+position = Vector2( -17.2636, -52.5756 )
+
+[node name="Bedroom" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( 648, -152 )
+roomName = "Master Bedroom"
+linkedRooms = [ NodePath("../Lounge"), NodePath("../Bathroom"), NodePath("../Garage") ]
+
+[node name="Shape" parent="Rooms/Bedroom" index="0"]
+shape = SubResource( 23 )
+
+[node name="Bed" parent="Rooms/Bedroom/Interactables" index="0" groups=[
+"pillowSpawns",
+] instance=ExtResource( 21 )]
+position = Vector2( -60.2498, 155.684 )
+message = SubResource( 24 )
+containerLine = "On it you find"
+
+[node name="Shape" parent="Rooms/Bedroom/Interactables/Bed" index="1"]
+shape = SubResource( 34 )
+
+[node name="Closet" parent="Rooms/Bedroom/Interactables" index="1" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+position = Vector2( 32, -192 )
+message = SubResource( 32 )
+containerLine = "At the bottom you find"
+
+[node name="VictimSpot" parent="Rooms/Bedroom" index="3"]
+position = Vector2( 5.49292, -32.1732 )
+
+[node name="Bathroom" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( 968, -64 )
+roomName = "Bath"
+linkedRooms = [ NodePath("../Bedroom") ]
+
+[node name="Shape" parent="Rooms/Bathroom" index="0"]
+shape = SubResource( 25 )
+
+[node name="Sink" parent="Rooms/Bathroom/Interactables" index="0" groups=[
+"pillSpawns",
+] instance=ExtResource( 21 )]
+position = Vector2( 32, -96 )
+message = SubResource( 26 )
+containerLine = "In the cabinet you find:"
+
+[node name="Toilet" parent="Rooms/Bathroom/Interactables" index="1" instance=ExtResource( 21 )]
+position = Vector2( 96, 32 )
+message = SubResource( 27 )
+
+[node name="Bathtub" parent="Rooms/Bathroom/Interactables" index="2" instance=ExtResource( 21 )]
+position = Vector2( 32, 96 )
+message = SubResource( 28 )
+
+[node name="Washer" parent="Rooms/Bathroom/Interactables" index="3" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+position = Vector2( -96, 96 )
+message = SubResource( 29 )
+containerLine = "In the clothes you find"
+
+[node name="Yard" parent="Rooms" groups=[
+"rooms",
+] instance=ExtResource( 14 )]
+position = Vector2( -120, -616 )
+roomName = "Yard"
+linkedRooms = [ NodePath("../Lounge") ]
+
+[node name="Shape" parent="Rooms/Yard" index="0"]
+shape = SubResource( 30 )
+
+[node name="Well" parent="Rooms/Yard/Interactables" index="0" groups=[
+"hidingSpots",
+] instance=ExtResource( 21 )]
+position = Vector2( -32, -56 )
+message = SubResource( 31 )
+containerLine = "Inside the bucket you find"
+
+[node name="Tree" parent="Rooms/Yard/Interactables" index="1" groups=[
+"axeSpawns",
+] instance=ExtResource( 21 )]
+position = Vector2( 160, 72 )
+message = SubResource( 33 )
+containerLine = "Embedded in the bark is:"
+
+[node name="Suspects" parent="Rooms/Yard" index="2"]
+position = Vector2( 32, 8 )
+
+[node name="VictimSpot" parent="Rooms/Yard" index="3"]
+position = Vector2( -316.238, 19.6178 )
+
+[node name="Suspects" type="Node2D" parent="."]
+position = Vector2( -23.8003, 19.9258 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Duchess Denim" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Duchess Denim"
+portrait = ExtResource( 3 )
+image = ExtResource( 26 )
+
+[node name="Lady Lilac" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Lady Lilac"
+portrait = ExtResource( 5 )
+image = ExtResource( 28 )
+
+[node name="Governess Gold" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Governess Gold"
+portrait = ExtResource( 7 )
+image = ExtResource( 31 )
+
+[node name="Mister Maroon" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Mister Maroon"
+portrait = ExtResource( 9 )
+image = ExtResource( 27 )
+
+[node name="Sir Schauss" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Sir Schauss"
+portrait = ExtResource( 11 )
+image = ExtResource( 29 )
+
+[node name="Admiral Acid" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Admiral Acid"
+portrait = ExtResource( 13 )
+image = ExtResource( 30 )
+
+[node name="Don Dim" parent="Suspects" groups=[
+"suspects",
+] instance=ExtResource( 2 )]
+personName = "Don Dim"
+portrait = ExtResource( 32 )
+image = ExtResource( 33 )
+
+[node name="Weapons" type="Node2D" parent="."]
+position = Vector2( -23.8003, 19.9258 )
+scale = Vector2( 4, 4 )
+
+[node name="Poison" type="Node2D" parent="Weapons" groups=[
+"weapons",
+]]
+script = ExtResource( 10 )
+itemName = "Rat Poison"
+spawnGroupName = "poisonSpawns"
+image = ExtResource( 4 )
+description = "Bitter-smelling rat poison in a bottle whose glass is the color of jade. It's half filled."
+type = 2
+
+[node name="Dagger" type="Node2D" parent="Weapons" groups=[
+"weapons",
+]]
+script = ExtResource( 10 )
+itemName = "Letter Opener"
+spawnGroupName = "daggerSpawns"
+image = ExtResource( 6 )
+description = "A small knife with a long blade. While  it may resemble a dagger,, it's actually a letter opener."
+type = 1
+
+[node name="Wrench" type="Node2D" parent="Weapons" groups=[
+"weapons",
+]]
+script = ExtResource( 10 )
+itemName = "Wrench"
+spawnGroupName = "wrenchSpawns"
+image = ExtResource( 8 )
+description = "A steel combination wrench. Quite heavy, good for swinging. Talking from experience."
+
+[node name="Pillow" type="Node2D" parent="Weapons" groups=[
+"weapons",
+]]
+script = ExtResource( 10 )
+itemName = "Pillow"
+spawnGroupName = "pillowSpawns"
+image = ExtResource( 12 )
+description = "A fluffy pillow stuffed to fullness with feathers. I have identified the nap weapon."
+type = 2
+
+[node name="Pills" type="Node2D" parent="Weapons" groups=[
+"weapons",
+]]
+script = ExtResource( 10 )
+itemName = "Painkiller"
+spawnGroupName = "pillSpawns"
+image = ExtResource( 23 )
+description = "A glass bottle closed with a cork. There is a bit of dark liquid inside. The label reads \"Miraculous Painkiller\"."
+type = 2
+
+[node name="Axe" type="Node2D" parent="Weapons" groups=[
+"weapons",
+]]
+script = ExtResource( 10 )
+itemName = "Axe"
+spawnGroupName = "axeSpawns"
+image = ExtResource( 24 )
+description = "A double-bladed axe with a wooden handle, used for chopping wood for the fireplace, I assume."
+type = 1
+
+[node name="Detective" parent="." instance=ExtResource( 16 )]
+position = Vector2( -64, 1408 )
+
+[node name="Camera" type="Camera2D" parent="Detective"]
+current = true
+
+[editable path="Rooms/Hall"]
+
+[editable path="Rooms/Garage"]
+
+[editable path="Rooms/Garage/Interactables/Workbenches"]
+
+[editable path="Rooms/Kitchen"]
+
+[editable path="Rooms/Study"]
+
+[editable path="Rooms/Study/Interactables/Bookcases"]
+
+[editable path="Rooms/Study/Interactables/Desk"]
+
+[editable path="Rooms/Lounge"]
+
+[editable path="Rooms/Bedroom"]
+
+[editable path="Rooms/Bedroom/Interactables/Bed"]
+
+[editable path="Rooms/Bathroom"]
+
+[editable path="Rooms/Yard"]
+
+[editable path="Suspects/Duchess Denim"]

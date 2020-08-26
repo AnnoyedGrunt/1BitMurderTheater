@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ui_panel.png" type="Texture" id=2]
+[ext_resource path="res://sprites/ui_logo.png" type="Texture" id=3]
+[ext_resource path="res://fonts/munro.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 46, 46 )
+margin_left = 15.0
+margin_right = 15.0
+margin_top = 15.0
+margin_bottom = 15.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 4 )
+
+[node name="StartScreen" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="VBoxContainer"]
+margin_right = 1152.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Explanation" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 340.0
+margin_right = 1152.0
+margin_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "The guests gather in the Villa's main hall. You, the Detective, have just arrived, and you're going to solve the mystery by finding out who the killer was and with what weapon they did it. Hurry! You have only minutes before the murderer manages to escape.  Interrogate the suspects, examine the body, and search the house for the murder weapon to answer the question:
+
+[center]Who did it? And with what?
+
+Move with WASD or the arrow keys. Interact with the spacebar and open the inventory with the escape key.
+Don't worry if you fail. You can try again, with a new victim, murderer, and weapon.
+
+Press Spacebar to begin.
+[center]"
+text = "The guests gather in the Villa's main hall. You, the Detective, have just arrived, and you're going to solve the mystery by finding out who the killer was and with what weapon they did it. Hurry! You have only minutes before the murderer manages to escape.  Interrogate the suspects, examine the body, and search the house for the murder weapon to answer the question:
+
+Who did it? And with what?
+
+Move with WASD or the arrow keys. Interact with the spacebar and open the inventory with the escape key.
+Don't worry if you fail. You can try again, with a new victim, murderer, and weapon.
+
+Press Spacebar to begin.
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Message.gd" type="Script" id=1]
+[ext_resource path="res://sprites/detective_face.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+displayName = "You"
+text = "The solid gold of the candelabra shines brighter than the four pathetic flames dancing atop the oozing wax.
+Damn, this place is fancy."
+image = ExtResource( 2 )

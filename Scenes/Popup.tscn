@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://animations/popup_appear.tres" type="Animation" id=1]
+[ext_resource path="res://Scripts/Bubble.gd" type="Script" id=2]
+[ext_resource path="res://sprites/object_question.png" type="Texture" id=3]
+
+[node name="Popup" type="Node2D"]
+position = Vector2( 261.265, 153.072 )
+z_index = 10
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpriteContainer" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="SpriteContainer"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+anims/popup_appear = ExtResource( 1 )

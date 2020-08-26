@@ -1,0 +1,373 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Scripts/TimeBox.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ui_panel.png" type="Texture" id=2]
+[ext_resource path="res://sprites/suspect_lilac_face.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/MessageBox.gd" type="Script" id=4]
+[ext_resource path="res://fonts/munro.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=8]
+[ext_resource path="res://sprites/object_hourglass_0.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/UIHourglass.gd" type="Script" id=10]
+[ext_resource path="res://sprites/object_hourglass_1.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/RoomBox.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/UIAlert.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/EndScreen.tscn" type="PackedScene" id=15]
+[ext_resource path="res://animations/malus_show.tres" type="Animation" id=16]
+[ext_resource path="res://audio/audio_itemget.wav" type="AudioStream" id=17]
+[ext_resource path="res://audio/audio_tock.wav" type="AudioStream" id=18]
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+load_path = "res://.import/testImg.png-000e5264fb9a5ae0d78c00f32d520334.stex"
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = SubResource( 11 )
+region_rect = Rect2( 0, 0, 1274, 715 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "message_appear"
+length = 0.3
+step = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 46, 46 )
+margin_left = 15.0
+margin_right = 15.0
+margin_top = 15.0
+margin_bottom = 15.0
+
+[sub_resource type="Animation" id=6]
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.322501, -92.5, 180, -0.23145, 84.5, 0.25, 0 ),
+"times": PoolRealArray( 0.1, 0.8 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 11 ) ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 46, 46 )
+margin_left = 15.0
+margin_right = 15.0
+margin_top = 15.0
+margin_bottom = 15.0
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 5 )
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_top = 0.000393359
+anchor_right = 1.0
+anchor_bottom = 1.00039
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+script = ExtResource( 8 )
+
+[node name="MessageBox" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.25
+anchor_right = 0.8
+anchor_bottom = 0.75
+grow_horizontal = 0
+grow_vertical = 0
+rect_scale = Vector2( 1e-05, 1 )
+rect_pivot_offset = Vector2( 384, 180 )
+texture = ExtResource( 2 )
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MessageBox"]
+anims/message_appear = SubResource( 2 )
+
+[node name="HBox" type="HBoxContainer" parent="MessageBox"]
+anchor_left = 0.03
+anchor_top = 0.05
+anchor_right = 0.97
+anchor_bottom = 0.95
+margin_top = 0.199999
+margin_right = 0.0800171
+margin_bottom = -0.199982
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoBox" type="VBoxContainer" parent="MessageBox/HBox"]
+margin_top = 60.0
+margin_right = 164.0
+margin_bottom = 263.0
+size_flags_vertical = 4
+
+[node name="Portrait" type="NinePatchRect" parent="MessageBox/HBox/InfoBox"]
+margin_right = 164.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 164, 164 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 2 )
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="Image" type="TextureRect" parent="MessageBox/HBox/InfoBox/Portrait"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MessageBox/HBox/InfoBox"]
+margin_top = 168.0
+margin_right = 164.0
+margin_bottom = 203.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.811765, 0.776471, 0.721569, 1 )
+text = "Label"
+align = 1
+valign = 1
+
+[node name="Message" type="Label" parent="MessageBox/HBox"]
+margin_left = 196.0
+margin_top = 49.0
+margin_right = 722.0
+margin_bottom = 274.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.811765, 0.776471, 0.721569, 1 )
+text = "I think it was that horrible, horrible, Admiral Acid! Can you believe it?
+
+I was in the lounge with Governess Gold.
+
+I just want to go home!"
+autowrap = true
+
+[node name="HUD" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -152.0
+margin_right = 152.0
+margin_bottom = 76.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FirstRow" type="HBoxContainer" parent="HUD"]
+margin_right = 417.0
+margin_bottom = 76.0
+grow_horizontal = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeBox" type="PanelContainer" parent="HUD/FirstRow"]
+margin_left = 56.0
+margin_right = 236.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 180, 0 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hbox" type="HBoxContainer" parent="HUD/FirstRow/TimeBox"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 165.0
+margin_bottom = 61.0
+size_flags_vertical = 3
+custom_constants/separation = 12
+
+[node name="Hourglass" type="TextureRect" parent="HUD/FirstRow/TimeBox/Hbox"]
+margin_right = 46.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 46, 0 )
+rect_pivot_offset = Vector2( 23, 23 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+script = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/FirstRow/TimeBox/Hbox/Hourglass"]
+autoplay = "hourglass_spin"
+anims/hourglass_spin = SubResource( 6 )
+anims/malus_show = ExtResource( 16 )
+
+[node name="TimeLabel" type="Label" parent="HUD/FirstRow/TimeBox/Hbox"]
+margin_left = 58.0
+margin_right = 150.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.811765, 0.776471, 0.721569, 1 )
+text = "05:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MalusLabel" type="Label" parent="HUD/FirstRow/TimeBox/Hbox/TimeLabel"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.878431, 0.294118, 0.294118, 1 )
+text = "-2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/FirstRow/TimeBox/Hbox/TimeLabel/MalusLabel"]
+root_node = NodePath("../..")
+anims/malus_show = ExtResource( 16 )
+
+[node name="RoomBox" type="PanelContainer" parent="HUD/FirstRow"]
+margin_left = 240.0
+margin_right = 360.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 120, 70 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/FirstRow/RoomBox"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 105.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.811765, 0.776471, 0.721569, 1 )
+text = "Main Hall"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Alert" type="PanelContainer" parent="HUD"]
+margin_top = 80.0
+margin_right = 417.0
+margin_bottom = 134.0
+custom_styles/panel = SubResource( 9 )
+script = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="HUD/Alert"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 402.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.572549, 1, 0.564706, 1 )
+text = "New info added recorded! Press ESC to review."
+align = 1
+
+[node name="Inventory" parent="." instance=ExtResource( 13 )]
+anchor_top = 0.20151
+anchor_bottom = 0.80151
+
+[node name="EndScreen" parent="." instance=ExtResource( 15 )]
+visible = false
+
+[node name="audioItemGet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="audioTock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+[connection signal="uiFocusChanged" from="." to="HUD/FirstRow/TimeBox" method="_on_UI_uiFocusChanged"]
+[connection signal="uiFocusChanged" from="." to="HUD/Alert" method="_on_UI_uiFocusChanged"]
+[connection signal="uiFocusChanged" from="." to="Timer" method="_on_UI_uiFocusChanged"]
+[connection signal="uiInventoryAdded" from="." to="HUD/Alert" method="_on_UI_uiInventoryAdded"]
+[connection signal="uiInventoryOpened" from="." to="HUD/Alert" method="_on_UI_uiInventoryOpened"]
+[connection signal="uiRoomChanged" from="." to="HUD/FirstRow/RoomBox" method="_on_UI_uiRoomChanged"]
+[connection signal="uiTimeChanged" from="." to="HUD/FirstRow/TimeBox" method="_on_UI_uiTimeChanged"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="resized" from="MessageBox" to="MessageBox" method="_on_MessageBox_resized"]
+[connection signal="resized" from="HUD/FirstRow/TimeBox/Hbox/Hourglass" to="HUD/FirstRow/TimeBox/Hbox/Hourglass" method="_on_Hourglass_resized"]
+[connection signal="accusationMade" from="Inventory" to="." method="_on_Inventory_accusationMade"]
