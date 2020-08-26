@@ -1,6 +1,6 @@
 ![1-Bit Murder Theater Logo](https://img.itch.zone/aW1nLzQxMDgxOTkucG5n/315x250%23c/xOQ3RH.png)
 
-This repository contains the entirety of the source code, including assets, for 1-Bit Murder Theater. The game was developed in less than 48 hours spread over the course of a week for [MizJam #1](https://itch.io/jam/miz-jam-1).
+This repository contains the entirety of the source code, including assets, for [1-Bit Murder Theater](https://annoyed-grunt.itch.io/murder-theater). The game was developed in less than 48 hours spread over the course of a week for [MizJam #1](https://itch.io/jam/miz-jam-1).
 
 To reimport the Tiled tileset and tilemap files included, you will need a Tiled importer for Godot. At the time of writing, one written by vnen can be found in Godot's Asset Library.
 
@@ -8,7 +8,7 @@ To reimport the Tiled tileset and tilemap files included, you will need a Tiled 
 
 The 1-Bit Art assets by Kenney falls under [CC1.0 Universal](https://www.kenney.nl/assets/bit-pack)
 
-Munro falls under SIL Open Font License [https://www.fontsquirrel.com/license/munro](https://www.fontsquirrel.com/license/munro)
+Munro falls under [SIL Open Font License](https://www.fontsquirrel.com/license/munro)
 
 The source code falls under MIT License:
 
