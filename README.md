@@ -7,6 +7,7 @@ To reimport the Tiled tileset and tilemap files included, you will need a Tiled 
 ## License
 
 The 1-Bit Art assets by Kenney falls under [CC1.0 Universal](https://www.kenney.nl/assets/bit-pack)
+
 Munro falls under SIL Open Font License [https://www.fontsquirrel.com/license/munro](https://www.fontsquirrel.com/license/munro)
 
 The source code falls under MIT License:
