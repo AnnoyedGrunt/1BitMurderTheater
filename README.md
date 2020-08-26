@@ -4,7 +4,7 @@ This repository contains the entirety of the source code, including assets, for 
 
 To reimport the Tiled tileset and tilemap files included, you will need a Tiled importer for Godot. At the time of writing, one written by vnen can be found in Godot's Asset Library.
 
-##License
+## License
 
 The 1-Bit Art assets by Kenney falls under [CC1.0 Universal](https://www.kenney.nl/assets/bit-pack)
 Munro falls under SIL Open Font License [https://www.fontsquirrel.com/license/munro](https://www.fontsquirrel.com/license/munro)
